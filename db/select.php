@@ -51,9 +51,9 @@
     <script src="../plugin/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Select2 -->
     <script src="../plugin/select2/js/select2.full.min.js"></script>
-
     <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+    <script src="../plugin/js/adminlte.min.js"></script>
+
     <script>
         $(function() {
             //Initialize Select2 Elements

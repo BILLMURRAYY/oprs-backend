@@ -37,16 +37,18 @@
           <div class="question-answer">
             
             <?php  
-            $result = $conn->prepare("SELECT * FROM department");
-            $result->execute(); //
+            // $result = $conn->prepare("SELECT * FROM department");
+            // $result->execute(); //
+            $result = "SELECT * FROM department";
+            $query = mysqli_query($conn,$result);
             
             // display it
-            if ($result !== false) {
+            if ($query !== false) {
                 // echo "<br>";
                 // echo $result->rowCount();
                 // echo "<br>";
                 // while($row = $result->fetch()) {
-                foreach($result as $row){
+                foreach($query as $row){
                     // echo '- ' . $row['name'] . '_______' . $row['departmentName'] . "<br>";
                     // echo '- ' . $row['departmentName'] . '_______' . $row['level'] . "<br>";
                     // echo "<pre>";

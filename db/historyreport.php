@@ -26,7 +26,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name Send</th>
+                    <th>Send To</th>
                     <th>Department</th>
                     <th>Date</th>
                     <th>Detail</th>
@@ -39,13 +39,13 @@
                 // $result = $conn->prepare("SELECT * FROM department");
                 // $result->execute(); //
                 // $row = $result->fetch(PDO::FETCH_BOTH);
-                $depart= 'หัวหน้าคณบดี';
+                $id_member= 4;
                 $result = "SELECT * FROM send_report 
                 inner JOIN member
                 on member.id = send_report.id_member_send
                 inner join department
                 on department.id = member.id_department
-                WHERE department_receive LIKE '%$depart%'";
+                WHERE id_member_send = $id_member";
                 $query = mysqli_query($conn, $result);
 
                 $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
@@ -60,7 +60,7 @@
 
                 <tr>
                     <td><?php echo $count++ ?></td>
-                    <td><?php echo $value['first_name']." ".$value['last_name'] ?></td>
+                    <td><?php echo $value['department_receive']?></td>
                     <td><?php echo $value['departmentName'] ?></td>
                     <td><?php echo $value['date'] ?></td>
                     <td align="center"><button><a href="viewreport.php?id_report=<?php echo $value['id_report'] ?>&sendName=<?php echo $value['first_name']." ".$value['last_name'] ?>&id_member_send=<?php echo $value['id_member_send'] ?>">Detail</a></button></td>

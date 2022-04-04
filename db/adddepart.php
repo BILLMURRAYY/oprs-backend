@@ -44,16 +44,18 @@
           <p>Flow Report</p>
           <div class="question-answer">
           <?php  
-            $result = $conn->prepare("SELECT * FROM department WHERE level!='admin'");
-            $result->execute(); //
+            // $result = $conn->prepare("SELECT * FROM department WHERE level!='admin'");
+            // $result->execute(); //
+            $result = "SELECT * FROM department WHERE level!='admin'";
+            $query = mysqli_query($conn,$result);
             
             // display it
-            if ($result !== false) {
+            if ($query !== false) {
                 // echo "<br>";
                 // echo $result->rowCount();
                 // echo "<br>";
                 // while($row = $result->fetch()) {
-                foreach($result as $row){
+                foreach($query as $row){
                     // echo '- ' . $row['name'] . '_______' . $row['departmentName'] . "<br>";
                     // echo '- ' . $row['departmentName'] . '_______' . $row['level'] . "<br>";
                     // echo "<pre>";
@@ -76,16 +78,18 @@
           <p>Flow Estimate</p>
           <div class="question-answer">
           <?php  
-            $result = $conn->prepare("SELECT * FROM department WHERE level!='admin'");
-            $result->execute(); //
+            // $result = $conn->prepare("SELECT * FROM department WHERE level!='admin'");
+            // $result->execute(); //
+            $result = "SELECT * FROM department WHERE level!='admin'";
+            $query = mysqli_query($conn,$result);
             
             // display it
-            if ($result !== false) {
+            if ($query !== false) {
                 // echo "<br>";
                 // echo $result->rowCount();
                 // echo "<br>";
                 // while($row = $result->fetch()) {
-                foreach($result as $row){
+                foreach($query as $row){
                     // echo '- ' . $row['name'] . '_______' . $row['departmentName'] . "<br>";
                     // echo '- ' . $row['departmentName'] . '_______' . $row['level'] . "<br>";
                     // echo "<pre>";
